@@ -1,3 +1,9 @@
+## To Run The Project
+
+After you have cloned this project cd to the `FinanceApp` folder and run `npm i` to install all dependencies. 
+
+After that is completed feel free to run it in your browser using `npm run start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
