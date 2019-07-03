@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
+import './App.scss';
 import AddItemForm from './components/addItemForm.js';
 import Ledger from './components/ledger.js';
 import Balance from './components/balance.js';
