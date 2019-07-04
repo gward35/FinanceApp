@@ -102,10 +102,12 @@ const App = () => {
       <h1>Finance App</h1>
       <AddItemForm addItem={addItem} />
       <Ledger items={items} deleteItem={deleteItem} />
-      <div className="balanceContainer">
-        <Balance items={items} getTotals={getTotals} />
-        <BalancePieChart items={items} getTotals={getTotals} />
-      </div>
+      {items.length > 0 ? (
+        <div className="balanceContainer">
+          <Balance items={items} getTotals={getTotals} />
+          <BalancePieChart items={items} getTotals={getTotals} />
+        </div>
+      ) : (null)}
       {editing ? (
         <EditSavingsGoal editing={editing} setEdit={setEdit} currentSavings={currentSavings} updateSavingsGoal={updateSavingsGoal} />
       ) : (

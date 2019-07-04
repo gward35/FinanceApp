@@ -28,42 +28,54 @@ table {
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
-}
 
-table::after {
-  content: '';
-  display: block;
-  height: 8px;
-  width: 100%;
-  background-image: repeating-linear-gradient(45deg,#BFD7EA, #BFD7EA 1px, transparent 2px, transparent 5px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-top: 1px solid #BFD7EA;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-size: 8px 8px;
-}
+  &::after {
+    content: '';
+    display: block;
+    height: 8px;
+    width: 100%;
+    background-image: repeating-linear-gradient(45deg,#0B3954, #0B3954 1px, transparent 1px, transparent 6px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-top: 1px solid #0B3954;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-size: 8px 8px;
+  }
 
-th, td {
-  padding: 1rem;
-  border-bottom: 1px solid #ccc;
-  text-align: left;
+  th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
 }
 
 .input {
   position: relative;
   margin-right: 1em;
+
+  &:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    border-bottom: 1px solid #000;
+  }
+
+  &:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    pointer-events: none;
+  }
 }
 
-.input:before {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "\00a0";
-  position: absolute;
-  border-bottom: 1px solid #000;
-}
 
 input {
   display: block;
@@ -72,17 +84,6 @@ input {
   background: none;
   height: 2em;
   padding: 0.5em;
-}
-
-.input:after {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  position: absolute;
-  transform: scaleX(0);
-  transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-  pointer-events: none;
 }
 
 select {
@@ -102,35 +103,36 @@ button {
   border-radius: 3px;
   text-transform: uppercase;
   margin-right: 1rem;
+
+  &::after {
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    transform: skewX(15deg);
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(248,77,77, 0.2);
+  }
+
+  &.add {
+    color: #087E8B;
+    border: 1px solid #087E8B;
+    box-shadow: 0px 1px 3px 0px rgba(8,126,139,0.2),
+    0px 1px 1px 0px rgba(8,126,139,0.15),
+    0px 2px 1px -1px rgba(8,126,139,0.15);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(8,126,139, 0.2);
+    }
+  }
 }
 
-button::after {
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  transform: skewX(15deg);
-  z-index: -1;
-}
-
-button:hover,
-button:focus,
-button:active {
-  background-color: rgba(248,77,77, 0.2);
-}
-
-button.add {
-  color: #087E8B;
-  border: 1px solid #087E8B;
-  box-shadow: 0px 1px 3px 0px rgba(8,126,139,0.2),
-  0px 1px 1px 0px rgba(8,126,139,0.15),
-  0px 2px 1px -1px rgba(8,126,139,0.15);
-}
-
-button.add:hover,
-button.add:focus,
-button.add:active {
-  background-color: rgba(8,126,139, 0.2);
-}
 
 
 .add-item,
