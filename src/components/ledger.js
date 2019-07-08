@@ -15,7 +15,7 @@ const Ledger = props => (
         props.items.map(money => (
         <tr key={money.id}>
           <td><span className={money.type}>{money.type}</span>{money.item}</td>
-          <td>{money.date}</td>
+          <td>{money.date.toString()}</td>
           <td>{money.cost}</td>
           <td><button onClick={() => props.deleteItem(money.id)}>Delete</button></td>
         </tr>

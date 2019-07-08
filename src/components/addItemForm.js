@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
+import DatePicker from 'react-datepicker';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const AddItemForm = props => {
 
-  const initialFormState = {id: null, item: '', date: '', cost: '', type: ''}
+  const initialFormState = {id: null, item: '', date: new Date(), cost: '', type: ''}
 
   const [money, setItem] = useState(initialFormState)
 
@@ -10,6 +13,10 @@ const AddItemForm = props => {
     const {name, value} = event.target
 
     setItem({...money, [name]: value })
+  }
+
+  const handleChange = date => {
+    setItem( {...money, date: date} )
   }
 
   return (
@@ -26,7 +33,7 @@ const AddItemForm = props => {
       </div>
       <div className="input">
         <label>Date</label>
-        <input type="date" name="date" value={money.date} onChange={handleInputChange} />
+        <DatePicker selected={money.date} onChange={handleChange} />
       </div>
       <div className="input">
         <label>Cost</label>
