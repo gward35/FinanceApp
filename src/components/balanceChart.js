@@ -9,6 +9,7 @@ const BalancePieChart = props => {
   return (
     <div className="chartContainer">
       <VictoryPie 
+       animate={{duration: 500}}
        labelComponent={<VictoryTooltip/>}
        colorScale={["#0B3954", "#F84D4D", "#087E8B"]}
        data ={[

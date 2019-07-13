@@ -34,7 +34,7 @@ table {
     display: block;
     height: 6px;
     width: 100%;
-    background-image: repeating-linear-gradient(45deg,#0B3954, #0B3954 1px, transparent 1px, transparent 6px);
+    background-image: repeating-linear-gradient(45deg,#0B3954, #0B3954 1px, transparent 1px, transparent 4px);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-top: 1px solid #0B3954;
@@ -195,6 +195,7 @@ button {
 
 progress {
   border: 1px solid #087E8B;
+  transition: all 0.5s ease;
 }
 
 progress[value] {
@@ -210,8 +211,10 @@ progress[value] {
 progress::-webkit-progress-bar {
   background-color: transparent;
   box-shadow: 0 2px 5px rgba(8,126,139, 0.25) inset;
+  transition: all 0.5s ease;
 }
 
 progress::-webkit-progress-value {
   background-color: #BFD7EA;
+  transition: all 0.5s ease;
 }
