@@ -14,10 +14,21 @@ const App = () => {
 
   const [items, setItem] = useState(() => {
     let itemsString = window.localStorage.getItem('items');
-    
     if (itemsString) {
       try {
-        return JSON.parse(itemsString);
+        const oldState = JSON.parse(itemsString);
+        const newState = oldState.map(item => {
+          const date = item.date;
+          const container = {} 
+          container.id = item.id
+          container.item = item.item
+          container.date = new Date(date.toString())
+          container.cost = item.cost
+          container.type = item.type
+          return container;
+        })
+        
+        return newState;
       } catch (e) {
         console.error(e);
         return [];

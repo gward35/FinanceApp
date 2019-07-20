@@ -227,13 +227,9 @@ button {
 }
 
 .chartContainer {
+  display: inline-block;
   max-width: 300px;
   height: auto;
-}
-
-.totalsContainer,
-.chartContainer {
-  display: inline-block;
 }
 
 .totalsContainer {
