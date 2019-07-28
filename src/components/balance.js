@@ -9,10 +9,10 @@ const Balance = props => {
 
   return (
     <div className="totalsContainer">
-      <h2>Expenses:</h2>${props.getTotals('expense')}
-      <h2>Income:</h2>${props.getTotals('income')}
-      <h2>Savings:</h2>${props.getTotals('savings')}
-      <h2>Balance:</h2>${getBalance()}
+      <h2>Expenses:</h2>${parseFloat(props.getTotals('expense')).toLocaleString('en')}
+      <h2>Income:</h2>${parseFloat(props.getTotals('income')).toLocaleString('en')}
+      <h2>Savings:</h2>${parseFloat(props.getTotals('savings')).toLocaleString('en')}
+      <h2>Balance:</h2>${parseFloat(getBalance()).toLocaleString('en')}
     </div>
   )
   

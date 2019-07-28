@@ -27,7 +27,7 @@ const App = () => {
           container.type = item.type
           return container;
         })
-        
+
         return newState;
       } catch (e) {
         console.error(e);
@@ -92,7 +92,7 @@ const App = () => {
       }
    
     }, 0)
-
+    
     return sum.toFixed(2)
   }
 

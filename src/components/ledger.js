@@ -16,7 +16,7 @@ const Ledger = props => (
         <tr key={money.id}>
           <td><span className={money.type}>{money.type}</span>{money.item}</td>
           <td>{money.date.toLocaleString().split(",")[0]}</td>
-          <td>{money.cost}</td>
+          <td>${parseFloat(money.cost).toLocaleString('en')}</td>
           <td><button onClick={() => props.deleteItem(money.id)}>Delete</button></td>
         </tr>
       ))

@@ -179,6 +179,18 @@ button {
   display: flex;
   flex-direction: row;
   margin-bottom: 2em;
+  justify-content: space-between;
+
+  button {
+    margin-right: 0;
+  }
+}
+
+.add-savings,
+.edit-savings {
+  .input {
+    flex: 1 1 25%;
+  }
 }
 
 .income,
