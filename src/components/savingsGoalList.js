@@ -15,10 +15,10 @@ const SavingsGoalList = props => (
         props.savings.map(saving => (
         <React.Fragment key={saving.id}>
         <tr>
-          <td>{saving.item}</td>
-          <td>${parseFloat(saving.goal).toLocaleString('en')}</td>
-          <td>${parseFloat(saving.savedAmount).toLocaleString('en')}</td>
-          <td>
+          <td data-label="Item: ">{saving.item}</td>
+          <td data-label="Goal: ">${parseFloat(saving.goal).toLocaleString('en')}</td>
+          <td data-label="Saved Amount: ">${parseFloat(saving.savedAmount).toLocaleString('en')}</td>
+          <td data-label="Action: ">
             <button onClick={() => props.editSavingsGoal(saving)}>Edit</button>
             <button onClick={() => props.deleteSavingsGoal(saving.id)}>Delete</button>
           </td>

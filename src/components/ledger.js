@@ -14,10 +14,10 @@ const Ledger = props => (
       {props.items.length > 0 ? (
         props.items.map(money => (
         <tr key={money.id}>
-          <td><span className={money.type}>{money.type}</span>{money.item}</td>
-          <td>{money.date.toLocaleString().split(",")[0]}</td>
-          <td>${parseFloat(money.cost).toLocaleString('en')}</td>
-          <td><button onClick={() => props.deleteItem(money.id)}>Delete</button></td>
+          <td data-label="Item: "><span className={money.type}>{money.type}</span>{money.item}</td>
+          <td data-label="Date: ">{money.date.toLocaleString().split(",")[0]}</td>
+          <td data-label="Cost: ">${parseFloat(money.cost).toLocaleString('en')}</td>
+          <td data-label="Action: " ><button onClick={() => props.deleteItem(money.id)}>Delete</button></td>
         </tr>
       ))
     ) : (
