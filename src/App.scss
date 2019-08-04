@@ -8,8 +8,11 @@ code {
     monospace;
 }
 
-.App {
-  margin: 0 16em;
+main {
+  margin: 0 14em;
+  @media screen and (max-width: 969px) {
+    margin: 0 7em;
+  }
 }
 
 h1, h2, h3 {
@@ -133,6 +136,9 @@ button {
     &:active {
       background-color: rgba(8,126,139, 0.2);
     }
+    @media screen and (max-width: 1174px) {
+      width: 100%;
+    }
   }
 }
 
@@ -180,6 +186,7 @@ button {
   flex-direction: row;
   margin-bottom: 2em;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   button {
     margin-right: 0;
@@ -189,6 +196,18 @@ button {
 .add-item {
   .input {
     flex: 1 1 20%;
+    @media screen and (max-width: 1174px) {
+      flex: 1 1 33%;
+      margin-bottom: 2rem;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (max-width: 969px) {
+      flex: 1 1 100%;
+      margin-right: 0;
+    }
   }
 }
 
@@ -196,6 +215,11 @@ button {
 .edit-savings {
   .input {
     flex: 1 1 25%;
+    @media screen and (max-width: 1174px) {
+      flex: 1 1 100%;
+      margin-bottom: 2rem;
+      margin-right: 0;
+    }
   }
 }
 
@@ -255,6 +279,14 @@ button {
   flex-direction: row;
   align-items: baseline;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1174px) {
+    justify-content: start;
+    h2 {
+      flex: 1 1 100%;
+      margin-bottom: 0;
+    }
+  }
 }
 
 progress {

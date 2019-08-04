@@ -92,7 +92,7 @@ const App = () => {
       }
    
     }, 0)
-    
+
     return sum.toFixed(2)
   }
 
@@ -110,21 +110,23 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Finance App</h1>
-      <AddItemForm addItem={addItem} />
-      <Ledger items={items} deleteItem={deleteItem} />
-      {items.length > 0 ? (
-        <div className="balanceContainer">
-          <Balance items={items} getTotals={getTotals} />
-          <BalancePieChart items={items} getTotals={getTotals} />
-        </div>
-      ) : (null)}
-      {editing ? (
-        <EditSavingsGoal editing={editing} setEdit={setEdit} currentSavings={currentSavings} updateSavingsGoal={updateSavingsGoal} />
-      ) : (
-        <AddSavingsGoal addSavingsGoal={addSavingsGoal} />
-      )}
-      <SavingsGoalList savings={savings} editSavingsGoal={editSavingsGoal} deleteSavingsGoal={deleteSavingsGoal} />
+      <main>
+        <h1>Finance App</h1>
+        <AddItemForm addItem={addItem} />
+        <Ledger items={items} deleteItem={deleteItem} />
+        {items.length > 0 ? (
+          <div className="balanceContainer">
+            <Balance items={items} getTotals={getTotals} />
+            <BalancePieChart items={items} getTotals={getTotals} />
+          </div>
+        ) : (null)}
+        {editing ? (
+          <EditSavingsGoal editing={editing} setEdit={setEdit} currentSavings={currentSavings} updateSavingsGoal={updateSavingsGoal} />
+        ) : (
+          <AddSavingsGoal addSavingsGoal={addSavingsGoal} />
+        )}
+        <SavingsGoalList savings={savings} editSavingsGoal={editSavingsGoal} deleteSavingsGoal={deleteSavingsGoal} />
+      </main>
     </div>
   );
 }
