@@ -1,20 +1,14 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import SavingsGoalList from './savingsGoalList'
 
 describe('Savings Goal List', () => {
-  test('it renders savings goals including item, savedAmount', () => {
+  test('it renders savings goals including item, savingsGoal, savedAmount', () => {
     const props = {
       savings: [{ id: 1, item: 'Couch', goal: 2000, savedAmount: 1000 }]
     }
 
     const { getByText } = render(<SavingsGoalList {...props} />)
-
-    console.log(
-      props.savings
-        .map(saving => parseFloat(saving.goal).toLocaleString('en'))
-        .toString()
-    )
 
     const savingsItemNode = getByText(
       props.savings.map(saving => saving.item).toString()
@@ -36,5 +30,39 @@ describe('Savings Goal List', () => {
     expect(savingsItemNode).toBeDefined()
     expect(savingsGoalNode).toBeDefined()
     expect(savingsSavedAmountNode).toBeDefined()
+  })
+
+  test('it calls editSavingsGoal function when edit button is clicked', done => {
+    const props = {
+      savings: [{ id: 1, item: 'Couch', goal: 2000, savedAmount: 1000 }],
+      editSavingsGoal: () => editSavingsGoal()
+    }
+
+    function editSavingsGoal() {
+      done()
+    }
+
+    const { getByText } = render(
+      <SavingsGoalList {...props} onClick={() => props.editSavingsGoal()} />
+    )
+
+    fireEvent.click(getByText('Edit'))
+  })
+
+  test('it calls deleteSavingsGoal function when edit button is clicked', done => {
+    const props = {
+      savings: [{ id: 1, item: 'Couch', goal: 2000, savedAmount: 1000 }],
+      deleteSavingsGoal: () => deleteSavingsGoal()
+    }
+
+    function deleteSavingsGoal() {
+      done()
+    }
+
+    const { getByText } = render(
+      <SavingsGoalList {...props} onClick={() => props.deleteSavingsGoal()} />
+    )
+
+    fireEvent.click(getByText('Delete'))
   })
 })
