@@ -5,7 +5,14 @@ import SavingsGoalList from './savingsGoalList'
 describe('Savings Goal List', () => {
   test('it renders savings goals including item, savingsGoal, savedAmount', () => {
     const props = {
-      savings: [{ id: 1, item: 'Couch', goal: 2000, savedAmount: 1000 }]
+      savings: [
+        {
+          id: 'Sun Mar 08 2020 21:33:53 GMT-0400 (Eastern Daylight Time)',
+          item: 'Couch',
+          goal: 2000,
+          savedAmount: 1000
+        }
+      ]
     }
 
     const { getByText } = render(<SavingsGoalList {...props} />)
