@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: victory
+    versions:
+    - 35.4.10
+    - 35.4.11
+    - 35.4.12
+    - 35.4.13
+    - 35.4.7
+    - 35.4.8
+    - 35.4.9
+    - 35.5.0
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.2
+  - dependency-name: "@testing-library/react"
+    versions:
+    - 11.2.3
+    - 11.2.5
