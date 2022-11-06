@@ -7,7 +7,7 @@
     "caniuse-lite": "^1.0.30001283",
     "node-sass": "^7.0.0",
     "react": "^18.0.0",
-    "react-datepicker": "^4.5.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
     "victory": "^36.2.0"
