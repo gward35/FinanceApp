@@ -10,7 +10,7 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
-    "victory": "^36.2.0"
+    "victory": "^36.6.8"
   },
   "scripts": {
     "start": "react-scripts start",
