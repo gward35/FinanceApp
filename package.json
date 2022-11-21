@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "caniuse-lite": "^1.0.30001430",
+    "caniuse-lite": "^1.0.30001434",
     "node-sass": "^7.0.3",
     "react": "^18.0.0",
     "react-datepicker": "^4.8.0",
